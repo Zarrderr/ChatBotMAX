@@ -8,16 +8,38 @@ namespace BotMax
     {
         public string Name;
 
-        bool isGreeted = false;
+        bool isGreeted = false;     // переменная булевого типа определяет тру или фалс условия
+
+        public bool IsWorking = false;
+
+        string name = Console.ReadLine();
+
+        public void YouName()
+        {
+
+            Console.ReadLine();
+
+        }
 
 
-        public void Greetings() 
+
+        public void Greetings()
         {
             Console.WriteLine("привет" + Name + "!");
-            Console.WriteLine("о чем задумался приятель?");
+            
 
             bool isGreeted = true;
 
+        }
+
+        public void StartMainLoop()
+        {
+            IsWorking = true;
+            while (IsWorking)
+            {
+                var message = Console.ReadLine();
+                Console.WriteLine($"о чем задумался приятель{message}???");
+            }
         }
 
 
@@ -39,36 +61,70 @@ namespace BotMax
         {
             
             
-            Console.WriteLine("считаю до десяти!");
-            Console.WriteLine("1");
-            Console.WriteLine("2");
-            Console.WriteLine("3");
-            Console.WriteLine("4");
-            Console.WriteLine("5");
-            Console.WriteLine("6");
-            Console.WriteLine("7");
-
+            Console.WriteLine("хей");
+           
 
 
         }
-
+        int number = 10;
 
         public void CountwhithWhile()
         {
 
 
             Console.WriteLine("считаю до десяти с помощью цикла!");
-            int number = 1;
+            
 
-        while (number <= 10)
             {
+                while (number <= 10)
 
-                Console.WriteLine(number + "!");
+                    Console.Write(number + "!");    // если WriteLine вертикальой строкой если Write горизонтальной 
+
+
+                // number = number + 1;   // операторы если нужно поставить другое число больше единицы 
+                // number += 1;
+                number++; // оператор прибовляющий значение на 1
+
 
 
             }
+        }       
+        
+        public void CountwhitDoWhile()
+        {
+            do
+
+            {
+                Console.WriteLine(number + "!");
+                number++;
+            }
+
+            while (number <= 1);
+
+            Console.WriteLine("метод завершен");
         }
+        
+        
+
+                public void CountwithFor()   // неведомая ошибка
+
+                {
+                     Console.WriteLine("считаем циклом for");
+
+                    for (int nuber = 1; number <= 10; number++)   // for( счетчик int nuber = 1; условие number <=10; этератор number++)
+                    {
+
+                          Console.WriteLine(number + "!");
+                     }
+
+                }
+
+
+            
+        
 
     }
 }
  
+
+

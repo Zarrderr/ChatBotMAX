@@ -6,13 +6,19 @@ namespace BotMax     //имя проэкта
     {
         static void Main(string[] args) // основной метод программы (точка входа)  в нем буду вызывать остольные методы
         {
-            Bot Max = new Bot();
+            Bot Max = new Bot(); // создаем из класса обьект 
+
+            Cikles Strong = new Cikles();
+
+            Strong.Name = "Адольф";
             Max.Name = "MAX";    
+
+
             Max.Greetings();   // метод привет о чем задумался
-            Max.Sayit();       // метод здаровался или нет
-            Max.CountToTen();  // метод счет до 10 последовательно
+            Strong.Sayit();       // метод здаровался или нет из класса Cikles
+            //Max.CountToTen();  // метод счет до 10 последовательно
             //Max.CountwhithWhile(); // метод счет до 10 циклом вайл
-            Max.CountwithFor();
+            //Max.CountwithFor();
 
 
             Max.StartMainLoop();   // цикл с безконечным переспрашиванием  

@@ -4,14 +4,27 @@ using System.Text;
 
 namespace BotMax
 {
+
+    
+
+
+
     class Bot
     {
+
+
+
+        GemesONE game = new GemesONE();
+
+
+
+
 
         public bool isGreeted = false;     // переменная булевого типа определяет тру или фалс условия
         
         public string Name;
 
-       
+        
 
         public bool IsWorking = false;
 

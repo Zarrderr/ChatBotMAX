@@ -8,6 +8,9 @@ namespace BotMax     //имя проэкта
         {
             Bot Max = new Bot(); // создаем из класса обьект 
 
+
+            
+
             Cikles Strong = new Cikles();
 
             Strong.Name = "Адольф";

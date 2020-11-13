@@ -14,7 +14,7 @@ namespace BotMax
 
 
 
-        GemesONE game = new GemesONE();
+        
 
 
 

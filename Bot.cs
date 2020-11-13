@@ -9,7 +9,7 @@ namespace BotMax
 
         public bool isGreeted = false;     // переменная булевого типа определяет тру или фалс условия
         
-        public string Name;
+        public string Name; // переменная имя обекта в классе 
 
        
 

@@ -8,14 +8,15 @@ namespace BotMax     //имя проэкта
         {
             Bot Max = new Bot(); // создаем из класса обьект 
 
-            Cikles Strong = new Cikles();
+            Cikles Strong = new Cikles();  /* создаем из класса обьект , обьявляю переменную Strong, переменная я вляется классом Cikles 
+                                            и присваиваю ей значение  = new Cikles(); это обьект класса  */
 
-            Strong.Name = "Адольф";
+            Strong.Name = "Адольф";    // точка это оператор доступа получаем , когда пишем точк мы получаем доступ ко всем публичным членам класса Cikles
             Max.Name = "MAX";    
 
 
-            Max.Greetings();   // метод привет о чем задумался
-            Strong.Sayit();       // метод здаровался или нет из класса Cikles
+           // Max.Greetings();   // метод привет о чем задумался
+           // Strong.Sayit();       // метод здаровался или нет из класса Cikles
             //Max.CountToTen();  // метод счет до 10 последовательно
             //Max.CountwhithWhile(); // метод счет до 10 циклом вайл
             //Max.CountwithFor();

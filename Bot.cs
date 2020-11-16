@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BotMax.Games;
 
 namespace BotMax
 {
@@ -14,9 +15,9 @@ namespace BotMax
 
 
 
-        
 
 
+        GamesONE geme = new GamesONE();
 
 
 

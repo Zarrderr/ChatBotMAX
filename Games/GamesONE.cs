@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BotMax.ИГРЫ
+namespace BotMax.Games
 {
     class GamesONE
     {
+
+
+        
 
         public bool Itsplaying;
 

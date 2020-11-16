@@ -7,6 +7,11 @@ namespace BotMax.ИГРЫ
     class GamesONE
     {
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+
         public bool Itsplaying;
 
 

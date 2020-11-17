@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace BotMax.Games
 {
-    class GamesONE
+    class GuesNumberGames
     {
 
-
-        
+     
 
         public bool Itsplaying;
 

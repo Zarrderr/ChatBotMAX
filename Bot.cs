@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using BotMax.Games;
 
+
 namespace BotMax
 {
 
@@ -13,12 +14,7 @@ namespace BotMax
     class Bot
     {
 
-
-
-
-
-        GamesONE geme = new GamesONE();
-
+        GuesNumberGames game = new GuesNumberGames();
 
 
         public bool isGreeted = false;     // переменная булевого типа определяет тру или фалс условия
@@ -28,6 +24,9 @@ namespace BotMax
         
 
         public bool IsWorking = false;
+
+
+      
 
         
 
@@ -52,12 +51,25 @@ namespace BotMax
         }
 
         public void StartMainLoop()
+
         {
+            game.Start();
             IsWorking = true;
             while (IsWorking)
             {
                 var message = Console.ReadLine();
+                if(game.Itsplaying)
+                {
+                
+                game.MakeTurn(message);
+                
+                }
+                else
+                {
                 Console.WriteLine($"почему {message}???");
+                }
+
+                
             }
 
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using BotMax.Games;
 
 namespace BotMax     //имя проэкта
 {
@@ -8,8 +9,7 @@ namespace BotMax     //имя проэкта
         {
             Bot Max = new Bot(); // создаем из класса обьект 
 
-
-            
+               
 
             Cikles Strong = new Cikles();
 

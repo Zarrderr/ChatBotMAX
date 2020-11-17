@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BotMax.Games;
 
 namespace BotMax
 {
@@ -8,7 +9,7 @@ namespace BotMax
     {
         public string Name;
 
-
+       
 
        public bool isGreeted = false;     // переменная булевого типа определяет тру или фалс условия
 

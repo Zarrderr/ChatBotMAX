@@ -8,16 +8,20 @@ namespace BotMax.Games
     class GuesNumberGames
     {
 
-     
-
+    
         public bool Itsplaying;
-
+        int Number;
 
         public void Start()
         {
 
             Itsplaying = true;
-            Console.WriteLine("игра началась");
+            Random rand = new Random(); // рандом встроеная библиотека для генерации случайных значений
+            Number = rand.Next(1, 100);
+
+            Console.WriteLine("я загадал число от 1 до 100 угадай какое");
+
+
 
 
         }
@@ -26,7 +30,7 @@ namespace BotMax.Games
         {
             Itsplaying = false;
 
-            Console.WriteLine("игра началась");
+            Console.WriteLine("игра закончилась");
 
 
         }
@@ -34,8 +38,31 @@ namespace BotMax.Games
 
         public void MakeTurn(string messege) // переменная в методе в скобках это передаваемый параметр в методе
         {
+
+            int guess = Convert.ToInt32(messege);
+
+            if (guess == Number)
+            {     
+             Console.WriteLine($"да ты угадал! я загадывал число{Number}!");
+                Finish();
+                return;
+            }
             Console.WriteLine("ход совершен");
-            Finish();
+
+            if (guess < Number)
+            {
+
+                Console.WriteLine($"нет мое число больше!");
+                
+
+
+            }
+            else
+            {
+                Console.WriteLine($"нет мое число меньше!");
+            }    
+
+                Finish();
         }
 
         /*

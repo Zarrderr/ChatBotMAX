@@ -1,54 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BotMax.Games;
+using BotMax.Games; // подключение библиотеки папки Games иначе   GuesNumberGames не работает
 
 
 namespace BotMax
 {
 
-    
-
-
-
+   
     class Bot
     {
+         
+        GuesNumberGames game = new GuesNumberGames();  // новая переменная GuesNumberGames в классе точнее со ссылкой на класс GuesNumberGames
 
-        GuesNumberGames game = new GuesNumberGames();
-
-
-        public bool isGreeted = false;     // переменная булевого типа определяет тру или фалс условия
         
         public string Name; // переменная имя обекта в классе 
 
-        
-
         public bool IsWorking = false;
-
-
-      
-
         
+        string[] otvet = { "красивое имя", "правда? рад знакомству", "офигенно", };
 
-        string name = Console.ReadLine();
-
-        public void YouName()
-        {
-
-            Console.ReadLine();
-
-        }
 
 
 
         public void Greetings()
         {
-            Console.WriteLine("привет" + Name + "!");
+            Console.WriteLine("привет меня зовут  " + Name + "!");
             
 
             bool isGreeted = true;
 
+            string name = Console.ReadLine();
         }
+
+        public void WhatYouName()
+        {
+            Console.WriteLine("а как зовут тебя??");
+
+        }
+
+        public void WhatYouName2()
+        {
+            string myname;
+            myname = Console.ReadLine();
+
+            Console.WriteLine(otvet[new Random().Next(0, otvet.Length)]);
+
+        }
+
+
+
 
         public void StartMainLoop()
 
@@ -58,6 +59,7 @@ namespace BotMax
             while (IsWorking)
             {
                 var message = Console.ReadLine();
+
                 if(game.Itsplaying)
                 {
                 
@@ -66,7 +68,9 @@ namespace BotMax
                 }
                 else
                 {
+
                 Console.WriteLine($"почему {message}???");
+
                 }
 
                 

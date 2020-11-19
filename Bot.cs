@@ -17,8 +17,9 @@ namespace BotMax
         public string Name; // переменная имя обекта в классе 
 
         public bool IsWorking = false;
-        
-        string[] otvet = { "красивое имя", "правда? рад знакомству", "офигенно", };
+
+        public bool NoWorking = true;
+
 
 
 
@@ -33,7 +34,7 @@ namespace BotMax
             string name = Console.ReadLine();
         }
 
-        public void WhatYouName()
+        public void WhatYouName1()
         {
             Console.WriteLine("а как зовут тебя??");
 
@@ -41,39 +42,69 @@ namespace BotMax
 
         public void WhatYouName2()
         {
-            string myname;
-            myname = Console.ReadLine();
+
+
+            var myname = Console.ReadLine();
+
+            string[] otvet = { $"{myname} хм красивое имя", $"правда?{myname}? рад знакомству", $"{myname} никогда бы не подумал",
+            $"круто быть тобой {myname}", $"я тоже хочу имя {myname} но меня назвали " + Name};
 
             Console.WriteLine(otvet[new Random().Next(0, otvet.Length)]);
 
+            
+
         }
 
+        public void VarianRasgovor()
+        {
 
+            string[] rasgovor = { "о чем поговорим", "что расскажешь", "давай поболтаем","ну вещай",
+                                   "я тебя внимательно слушаю! ","выбири темму для разговора","давай общаться","поговорим?","ну что? поболтаем?"};
+            Console.WriteLine(rasgovor[new Random().Next(0, rasgovor.Length)]);
+
+            var potvet = Console.ReadLine();
+
+        }
+
+         
 
 
         public void StartMainLoop()
 
         {
-            game.Start();
+            
+            NoWorking = false;
             IsWorking = true;
+
             while (IsWorking)
             {
+
+
+
                 var message = Console.ReadLine();
 
-                if(game.Itsplaying)
+                string[] ciclesay = { $"{message} хм красивое имя", $"правда?{message}? рад знакомству", $"{message} никогда бы не подумал",
+                                                    $"круто быть тобой {message}", $"я тоже хочу имя {message} но меня назвали " + Name};
+
+     
+                if(NoWorking)
                 {
-                
-                game.MakeTurn(message);
-                
+                    var enterr = Console.ReadLine();
+
+                    string[] enterry = { $"{enterr} хм красивое имя", $"правда?{enterr}? рад знакомству", $"{enterr} никогда бы не подумал",
+                                                    $"круто быть тобой {enterr}", $"я тоже хочу имя {enterr} но меня назвали " + Name};
+
                 }
                 else
                 {
 
-                Console.WriteLine($"почему {message}???");
+                    Console.WriteLine(ciclesay[new Random().Next(0, ciclesay.Length)]);
 
                 }
-
                 
+                
+                
+
             }
 
 

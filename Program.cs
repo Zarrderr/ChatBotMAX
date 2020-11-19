@@ -10,17 +10,20 @@ namespace BotMax     //имя проэкта
             Bot Max = new Bot(); // создаем из класса обьект 
             Cikles Strong = new Cikles();
 
-            Strong.Name = "Адольф";
+            
             Max.Name = "MAX";
             
             
 
             Max.Greetings();   // метод привет о чем задумался
-            Max.WhatYouName(); // метод как тебя зовут??
+            Max.WhatYouName1(); // метод как тебя зовут??
             Max.WhatYouName2(); // метод ввода имини и рандомный ответ
+            Max.VarianRasgovor();
+            Max.StartMainLoop();   // цикл с безконечным переспрашиванием
 
 
-            
+
+
             //Strong.Sayit();       // метод здаровался или нет из класса Cikles
 
             //Max.CountToTen();  // метод счет до 10 последовательно

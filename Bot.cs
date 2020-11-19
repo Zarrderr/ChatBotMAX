@@ -11,14 +11,19 @@ namespace BotMax
     class Bot
     {
          
+
+
         GuesNumberGames game = new GuesNumberGames();  // новая переменная GuesNumberGames в классе точнее со ссылкой на класс GuesNumberGames
 
         
+
         public string Name; // переменная имя обекта в классе 
 
         public bool IsWorking = false;
 
-        public bool NoWorking = true;
+        public bool Ifneed = false;
+        
+        public bool Isplaying;
 
 
 
@@ -29,8 +34,6 @@ namespace BotMax
             Console.WriteLine("привет меня зовут  " + Name + "!");
             
 
-            bool isGreeted = true;
-
             string name = Console.ReadLine();
         }
 
@@ -39,6 +42,8 @@ namespace BotMax
             Console.WriteLine("а как зовут тебя??");
 
         }
+        
+        
 
         public void WhatYouName2()
         {
@@ -59,65 +64,106 @@ namespace BotMax
         {
 
             string[] rasgovor = { "о чем поговорим", "что расскажешь", "давай поболтаем","ну вещай",
-                                   "я тебя внимательно слушаю! ","выбири темму для разговора","давай общаться","поговорим?","ну что? поболтаем?"};
+                                   "я тебя внимательно слушаю! ","выбири темму для разговора","давай общаться?","поговорим?","ну что? поболтаем?"};
             Console.WriteLine(rasgovor[new Random().Next(0, rasgovor.Length)]);
 
-            var potvet = Console.ReadLine();
+           Console.ReadLine();
+
+        }
+       
+        /*public void IfneedGames()
+        {
+
+           {
+                Console.WriteLine("хочешь сыграть со мной в игру?");
+                    bool Ifneed = true;
+
+
+                while (Ifneed)
+                {
+
+                    string[] ciclesay = { $"хм красивое имя", $"правда?{message}? рад знакомству", $"{message} никогда бы не подумал",
+                                                    $"круто быть тобой {message}", $"я тоже хочу имя {message} но меня назвали " + Name};
+
+
+                    if (IsWorking)
+                    {
+                        var enterr = Console.ReadLine();
+
+                        string[] enterry = { $"{enterr} хм красивое имя", $"правда?{enterr}? рад знакомству", $"{enterr} никогда бы не подумал",
+                                                    $"круто быть тобой {enterr}", $"я тоже хочу имя {enterr} но меня назвали " + Name};
+
+                    }
+                    else
+                    {
+
+                        break;
+
+                    }
+
+
+
+
+                }
+
+
+
+
+            }
+
 
         }
 
-         
+
+        */
 
 
         public void StartMainLoop()
 
         {
-            
-            NoWorking = false;
-            IsWorking = true;
+            //game.Start();
+              IsWorking = true;
 
             while (IsWorking)
             {
-
-
-
                 var message = Console.ReadLine();
 
-                string[] ciclesay = { $"{message} хм красивое имя", $"правда?{message}? рад знакомству", $"{message} никогда бы не подумал",
-                                                    $"круто быть тобой {message}", $"я тоже хочу имя {message} но меня назвали " + Name};
+                string[] ciclesay = { $"{message} ой да ладно тебе", $"правда?{message}?", $"{message} ну ты чего удумал то а?",
+                                                    $" {message} да я даже не знаю ?", $" {message}? это вообще законно??"};
 
-     
-                if(NoWorking)
+                
+
+                if (game.Isplaying)
                 {
-                    var enterr = Console.ReadLine();
-
-                    string[] enterry = { $"{enterr} хм красивое имя", $"правда?{enterr}? рад знакомству", $"{enterr} никогда бы не подумал",
-                                                    $"круто быть тобой {enterr}", $"я тоже хочу имя {enterr} но меня назвали " + Name};
-
+                    game.MakeTurn(message);
                 }
                 else
                 {
 
-                    Console.WriteLine(ciclesay[new Random().Next(0, ciclesay.Length)]);
+                    Console.WriteLine(Answer());   //в врайтлайн подставляется значение метода ансер
 
                 }
-                
-                
-                
+
+               
+                string Answer()   // отдельный метод строчный
+                {
+                    string[] lines = new string[5]; //обьяви переменну массив типа стринг с иминем лайнс присваеваем ссылку на новый массив из пяти строк
+
+                    lines[0] = "да ладно";
+                    lines[1] = "серьезно???";
+                    lines[2] = "что ты несешь?";
+                    lines[3] = "ой ой как круто то";
+                    lines[4] = "хм прикольно!";
+
+                    Random rand = new Random();
+
+
+                    return lines[rand.Next(0, lines.Length)];
+                }
 
             }
 
-
-
-           
         }
-
-
-        
-
-
-            
-        
 
     }
 }

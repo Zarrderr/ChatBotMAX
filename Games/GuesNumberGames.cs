@@ -8,14 +8,16 @@ namespace BotMax.Games
     class GuesNumberGames
     {
 
-    
-        public bool Itsplaying;
+
+        public bool Isplaying;
+
         int Number;
+
 
         public void Start()
         {
+            Isplaying = true;
 
-            Itsplaying = true;
             Random rand = new Random(); // рандом встроеная библиотека для генерации случайных значений
             Number = rand.Next(1, 100);
 
@@ -28,7 +30,7 @@ namespace BotMax.Games
 
         public void Finish()
         {
-            Itsplaying = false;
+            Isplaying = false;
 
             Console.WriteLine("игра закончилась");
 
@@ -38,43 +40,46 @@ namespace BotMax.Games
 
         public void MakeTurn(string messege) // переменная в методе в скобках это передаваемый параметр в методе
         {
-
-            int guess = Convert.ToInt32(messege);
-
-            if (guess == Number)
-            {     
-             Console.WriteLine($"да ты угадал! я загадывал число{Number}!");
-                Finish();
-                return;
-            }
-            Console.WriteLine("ход совершен");
-
-            if (guess < Number)
+            
+            try
             {
 
-                Console.WriteLine($"нет мое число больше!");
-                
+                int guess = Convert.ToInt32(messege);
 
+                if (guess == Number)
+                {
+                    Console.WriteLine($"да ты угадал! я загадывал число {Number}!");
+                    Finish();
+                    return;
+                }
+
+
+                if (guess < Number)
+
+                {
+                    Console.WriteLine($"нет мое число больше!");
+
+                }
+
+
+                else
+                {
+                    Console.WriteLine($"нет мое число меньше!");
+                }
 
             }
-            else
+            catch(FormatException ex)
             {
-                Console.WriteLine($"нет мое число меньше!");
-            }    
+                Console.WriteLine("НЕТ! ВВЕДИ ЦИФРОВОЕ ЧИСЛО!");
 
-                Finish();
-        }
-
-        /*
-        public void SwitchChannel(int buttonNumber) 
-        {
-            int Tvchannel = 3;
-
-            Tvchannel = buttonNumber;
-
+            }
            
+            
         }
-        */
-         
+
+        
+
+
     }
+        
 }
